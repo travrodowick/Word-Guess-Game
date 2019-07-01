@@ -24,21 +24,27 @@ function restGame (){
   userGuess = [];
 }
 
+//capture key up
+document.onkeyup = function (event) {
+  userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+ guessCount = (event)
+  console.log (userGuess)
+
 //total number of guesses player has -- 9
 function updateGuessTotal (){
-  document.querySelector("#guess-total") = guessTotal
+  document.getElementById("#guess-total") = (guessTotal - (++strokeCount))
 }
 
 
 //
 function updateGuessList () {
-  document.querySelector("guess-list ").innerHTML = (userGuess)
+  document.getElementById("guess-list").innerHTML = ("Guesses so far:  " + userGuess)
 }
 
 
 //function updating the number of guesses left
 function updateGuessLeft () {
-  document.querySelector("#guess-left").innerHTML = guess
+  document.getElementById("#guess-left").innerHTML = guess
 }
 
 //update Winner
@@ -46,12 +52,10 @@ function updateWins () {
   document.querySelector ('#win-colomn').innerHTML = wins
 }
 
-//capture user guess
-document.onkeyup = function () {
-  userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-  console.log (userGuess)
-  updateGuessList (userGuess)
 
+
+  updateGuessList ()
+  
 
 
 //Winner Alert
