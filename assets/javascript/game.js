@@ -24,67 +24,62 @@ function restGame (){
 
 //total number of guesses player has -- 9
 function updateGuessTotal (){
-  document.querySelector("#guess-total").innerHTML = guessLeft
+  document.querySelector("#guess-total").innerHTML = guessTotal -
 }
 
 
 //
 function updateGuessList () {
-  document.querySelector().innerHTML = 
+  document.querySelector("guess-list ").innerHTML = userGuess
 }
 
 
 //function updating the number of guesses left
 function updateGuessLeft () {
-  document.querySelector("#guess-list").innerHTML = guess
+  document.querySelector("#guess-left").innerHTML = guess
+}
+
+//
+
+
+
+
+//Winner Alert
+for (var i = 0; i < letters.length; i++) {
+  if (letters[i] === userGuess)
+  alert("Winner Winner Chicken Dinner!!!")
+}
+
+
+//Loser Alert
+for 
+
+//
+
+
+ 
+
+
+
+
+
+//shows how many letters are left in the word
+var answer = [];
+for (var i = 0; 1 < letters.length; i++) {
+  answer[i] = "_";
 }
 
 
 
-
-
-
-
-
-
-
-
-
-document.on('keyup', function () {
-
-
-
-
-  var userGuess = .toLowerCase (userGuess)
+var userGuess = toLowerCase (userGuess)
     if (userGuess > -1) {
         alert("winner!")
     } else {
         alert("loss")
     }
-  }
+
 console.log('word')
 
-
-
-  ];
-    
-          // Reworked our code from last step to use "else if" instead of lots of if statements.
-    
-          // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
-          if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
-    
-            if ((userGuess === "r" && computerGuess === "s") ||
-              (userGuess === "s" && computerGuess === "p") || 
-              (userGuess === "p" && computerGuess === "r")) {
-              wins++;
-            } else if (userGuess === computerGuess) {
-              ties++;
-            } else {
-              losses++;
-            }
-
-
-var totalSum = total(9)
 
 function total (num) {
     var sum = 0
