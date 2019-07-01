@@ -10,27 +10,29 @@ var userGuess = [];
 
 var letterToGuess = null;
 
+
+
 //computer randomly picks a number to be chosen
 
-var compPick = letters[Math.floor(Math.random() * letters.length)];
-
+var letterToGuess = letters[Math.floor(Math.random() * letters.length)];
+console.log (letterToGuess)
 
 //game restart
 function restGame (){
-  letters = compPick[Math.floor(Math.random() *compPick.length)];
+  letterToGuess = letters[Math.floor(Math.random() *letters.length)];
   guessTotal = 9;
   userGuess = [];
 }
 
 //total number of guesses player has -- 9
 function updateGuessTotal (){
-  document.querySelector("#guess-total").innerHTML = guessTotal -
+  document.querySelector("#guess-total") = guessTotal
 }
 
 
 //
 function updateGuessList () {
-  document.querySelector("guess-list ").innerHTML = userGuess
+  document.querySelector("guess-list ").innerHTML = (userGuess)
 }
 
 
@@ -39,53 +41,34 @@ function updateGuessLeft () {
   document.querySelector("#guess-left").innerHTML = guess
 }
 
-//
+//update Winner
+function updateWins () {
+  document.querySelector ('#win-colomn').innerHTML = wins
+}
 
+//capture user guess
+document.onkeyup = function () {
+  userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+  console.log (userGuess)
+  updateGuessList (userGuess)
 
 
 
 //Winner Alert
-for (var i = 0; i < letters.length; i++) {
-  if (letters[i] === userGuess)
+function winner () {
+  if (letterToGuess === userGuess)
   alert("Winner Winner Chicken Dinner!!!")
+  resetGame ()
 }
 
-
 //Loser Alert
-for 
+function loser () {
+  if (guessTotal = 0)
+  alert ('you lose!!!!')
+  resetGame ()
 
+}
+}
 //
 
 
- 
-
-
-
-
-
-//shows how many letters are left in the word
-var answer = [];
-for (var i = 0; 1 < letters.length; i++) {
-  answer[i] = "_";
-}
-
-
-
-var userGuess = toLowerCase (userGuess)
-    if (userGuess > -1) {
-        alert("winner!")
-    } else {
-        alert("loss")
-    }
-
-console.log('word')
-
-
-function total (num) {
-    var sum = 0
-    for(var i = 0; i <= num ; i++) {
-        sum += i
-    }
-    return sum
-}
-console.log (totalSum)
