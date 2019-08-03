@@ -30,6 +30,7 @@ function restGame (){
 //get user input using keypress -- store info in variable for later use
 document.onkeyup = function (event) {
   userGuess.push(event.key);
+  guessCount  
   console.log (userGuess)
   console.log (letterToGuess)
   console.log (guessCount)
